@@ -43,9 +43,11 @@
             this.tbADec.Name = "tbADec";
             this.tbADec.Size = new System.Drawing.Size(100, 20);
             this.tbADec.TabIndex = 0;
+            this.tbADec.TextChanged += new System.EventHandler(this.tbADec_TextChanged);
             // 
             // tbABin
             // 
+            this.tbABin.Enabled = false;
             this.tbABin.Location = new System.Drawing.Point(12, 39);
             this.tbABin.Name = "tbABin";
             this.tbABin.Size = new System.Drawing.Size(100, 20);
@@ -57,9 +59,11 @@
             this.tbBDec.Name = "tbBDec";
             this.tbBDec.Size = new System.Drawing.Size(100, 20);
             this.tbBDec.TabIndex = 2;
+            this.tbBDec.TextChanged += new System.EventHandler(this.tbBDec_TextChanged);
             // 
             // tbBBin
             // 
+            this.tbBBin.Enabled = false;
             this.tbBBin.Location = new System.Drawing.Point(119, 39);
             this.tbBBin.Name = "tbBBin";
             this.tbBBin.Size = new System.Drawing.Size(100, 20);
@@ -67,6 +71,7 @@
             // 
             // tbResDec
             // 
+            this.tbResDec.Enabled = false;
             this.tbResDec.Location = new System.Drawing.Point(12, 116);
             this.tbResDec.Name = "tbResDec";
             this.tbResDec.Size = new System.Drawing.Size(100, 20);
@@ -74,19 +79,21 @@
             // 
             // tbResBin
             // 
-            this.tbResBin.Location = new System.Drawing.Point(119, 116);
+            this.tbResBin.Enabled = false;
+            this.tbResBin.Location = new System.Drawing.Point(12, 142);
             this.tbResBin.Name = "tbResBin";
             this.tbResBin.Size = new System.Drawing.Size(100, 20);
             this.tbResBin.TabIndex = 5;
             // 
             // btnMult
             // 
-            this.btnMult.Location = new System.Drawing.Point(119, 77);
+            this.btnMult.Location = new System.Drawing.Point(37, 77);
             this.btnMult.Name = "btnMult";
             this.btnMult.Size = new System.Drawing.Size(75, 23);
             this.btnMult.TabIndex = 6;
             this.btnMult.Text = "Умножить";
             this.btnMult.UseVisualStyleBackColor = true;
+            this.btnMult.Click += new System.EventHandler(this.btnMult_Click);
             // 
             // MainForm
             // 
