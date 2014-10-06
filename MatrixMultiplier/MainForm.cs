@@ -19,13 +19,15 @@ namespace MatrixMultiplier
 
         private void btnMult_Click(object sender, EventArgs e)
         {
-            int A, B;
-            if (!(int.TryParse(tbADec.Text, out A) && (int.TryParse(tbBDec.Text, out B))))
+            int A, B, width;
+            if (!(int.TryParse(tbADec.Text, out A) && (int.TryParse(tbBDec.Text, out B)) && (int.TryParse(tbWidth.Text, out width))))
                 MessageBox.Show("Incorrect input");
+            else if (width > 32)
+                MessageBox.Show("Input data width should be 32 or less");
             else
             {
-                Multiplier mul = new Multiplier(A, B);
-                mul.Multiply();
+                Multiplier mul = new Multiplier(A, B, width);
+                tbResDec.Text = mul.Multiply().ToString();
             }
         }
 
@@ -37,6 +39,11 @@ namespace MatrixMultiplier
         private void tbBDec_TextChanged(object sender, EventArgs e)
         {
             tbBBin.Text = NumUtils.DecToBin(((TextBox)sender).Text);
+        }
+
+        private void tbResDec_TextChanged(object sender, EventArgs e)
+        {
+            tbResBin.Text = NumUtils.DecToBin(((TextBox)sender).Text);
         }
     }
 }

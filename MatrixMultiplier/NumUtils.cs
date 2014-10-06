@@ -21,5 +21,16 @@ namespace MatrixMultiplier
             char[] arr = tmp.Reverse().ToArray();
             return Array.ConvertAll(arr, n => (int)Char.GetNumericValue(n));
         }
+
+        internal static int BinArrayToDec(int[] arr)
+        {
+            int res;
+            res = 0;
+            for (int i = arr.Length - 1; i >= 0; i--)
+            {
+                res = (res << 1) + arr[i];
+            }
+            return res;
+        }
     }
 }

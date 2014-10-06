@@ -35,6 +35,7 @@
             this.tbResDec = new System.Windows.Forms.TextBox();
             this.tbResBin = new System.Windows.Forms.TextBox();
             this.btnMult = new System.Windows.Forms.Button();
+            this.tbWidth = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // tbADec
@@ -76,6 +77,7 @@
             this.tbResDec.Name = "tbResDec";
             this.tbResDec.Size = new System.Drawing.Size(100, 20);
             this.tbResDec.TabIndex = 4;
+            this.tbResDec.TextChanged += new System.EventHandler(this.tbResDec_TextChanged);
             // 
             // tbResBin
             // 
@@ -95,11 +97,19 @@
             this.btnMult.UseVisualStyleBackColor = true;
             this.btnMult.Click += new System.EventHandler(this.btnMult_Click);
             // 
+            // tbWidth
+            // 
+            this.tbWidth.Location = new System.Drawing.Point(486, 17);
+            this.tbWidth.Name = "tbWidth";
+            this.tbWidth.Size = new System.Drawing.Size(34, 20);
+            this.tbWidth.TabIndex = 7;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(545, 305);
+            this.Controls.Add(this.tbWidth);
             this.Controls.Add(this.btnMult);
             this.Controls.Add(this.tbResBin);
             this.Controls.Add(this.tbResDec);
@@ -123,6 +133,7 @@
         private System.Windows.Forms.TextBox tbResDec;
         private System.Windows.Forms.TextBox tbResBin;
         private System.Windows.Forms.Button btnMult;
+        private System.Windows.Forms.TextBox tbWidth;
     }
 }
 
