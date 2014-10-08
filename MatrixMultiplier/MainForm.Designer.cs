@@ -36,6 +36,13 @@
             this.tbResBin = new System.Windows.Forms.TextBox();
             this.btnMult = new System.Windows.Forms.Button();
             this.tbWidth = new System.Windows.Forms.TextBox();
+            this.tbTruncated = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rbFull = new System.Windows.Forms.RadioButton();
+            this.rbShort = new System.Windows.Forms.RadioButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tbADec
@@ -103,12 +110,76 @@
             this.tbWidth.Name = "tbWidth";
             this.tbWidth.Size = new System.Drawing.Size(34, 20);
             this.tbWidth.TabIndex = 7;
+            this.tbWidth.Text = "4";
+            // 
+            // tbTruncated
+            // 
+            this.tbTruncated.Location = new System.Drawing.Point(486, 44);
+            this.tbTruncated.Name = "tbTruncated";
+            this.tbTruncated.Size = new System.Drawing.Size(34, 20);
+            this.tbTruncated.TabIndex = 8;
+            this.tbTruncated.Text = "2";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.rbShort);
+            this.groupBox1.Controls.Add(this.rbFull);
+            this.groupBox1.Location = new System.Drawing.Point(250, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(85, 64);
+            this.groupBox1.TabIndex = 9;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Multiplication";
+            // 
+            // rbFull
+            // 
+            this.rbFull.AutoSize = true;
+            this.rbFull.Checked = true;
+            this.rbFull.Location = new System.Drawing.Point(7, 19);
+            this.rbFull.Name = "rbFull";
+            this.rbFull.Size = new System.Drawing.Size(41, 17);
+            this.rbFull.TabIndex = 0;
+            this.rbFull.TabStop = true;
+            this.rbFull.Text = "Full";
+            this.rbFull.UseVisualStyleBackColor = true;
+            // 
+            // rbShort
+            // 
+            this.rbShort.AutoSize = true;
+            this.rbShort.Location = new System.Drawing.Point(7, 42);
+            this.rbShort.Name = "rbShort";
+            this.rbShort.Size = new System.Drawing.Size(50, 17);
+            this.rbShort.TabIndex = 1;
+            this.rbShort.Text = "Short";
+            this.rbShort.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(445, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Width";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(424, 47);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(56, 13);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Truncated";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(545, 305);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.tbTruncated);
             this.Controls.Add(this.tbWidth);
             this.Controls.Add(this.btnMult);
             this.Controls.Add(this.tbResBin);
@@ -119,6 +190,8 @@
             this.Controls.Add(this.tbADec);
             this.Name = "MainForm";
             this.Text = "Form1";
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -134,6 +207,12 @@
         private System.Windows.Forms.TextBox tbResBin;
         private System.Windows.Forms.Button btnMult;
         private System.Windows.Forms.TextBox tbWidth;
+        private System.Windows.Forms.TextBox tbTruncated;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton rbShort;
+        private System.Windows.Forms.RadioButton rbFull;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
 
