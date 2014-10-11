@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 
 namespace MatrixMultiplier
 {
-    class Multiplier
+    public class Multiplier
     {
-        private int A, B, width, truncated;
+        private long A, B;
+        private int width, truncated;
 
         int[] arrA, arrB, arrS, arrC, arrV;
 
-        public Multiplier(int A, int B, int width)
+        public Multiplier(long A, long B, int width)
         {
             this.A = A;
             this.B = B;
@@ -26,15 +27,16 @@ namespace MatrixMultiplier
             NumUtils.DecToBinArray(B).CopyTo(arrB, 0);
         }
 
-        public Multiplier(int A, int B, int width, int truncated)
+        public Multiplier(long A, long B, int width, int truncated)
             : this(A, B, width)
         {
             this.truncated = truncated;
         }
 
-        internal int Multiply()
+        public ulong Multiply()
         {
             Adder adder;
+            ClearArrays();
             for (int i = 0; i < width; i++)
             {
                 for (int j = 0; j < width - 1; j++)
@@ -74,9 +76,19 @@ namespace MatrixMultiplier
             return NumUtils.BinArrayToDec(arrV);
         }
 
-        internal int ShortMultiply()
+        private void ClearArrays()
+        {
+            arrA.Initialize();
+            arrB.Initialize();
+            arrS.Initialize();
+            arrC.Initialize();
+            arrV.Initialize();
+        }
+
+        public ulong ShortMultiply()
         {
             Adder adder;
+            ClearArrays();
             for (int i = 0; i < width; i++)
             {
                 for (int j = 0; j < width - 1; j++)
@@ -89,11 +101,11 @@ namespace MatrixMultiplier
                     }
                     else if (i < truncated)
                     {
-                        if (j >= truncated)
+                        if (j >= truncated - i)
                         {
-                            if (j == truncated)
+                            if (j == truncated - i)
                                 adder = new HalfAdder(arrS[(i - 1) * (width - 1) + j + 1], arrA[j] & arrB[i + 1]);
-                            else if (j < width - 1)
+                            else if (j < width - 2)
                                 adder = new FullAdder(arrS[(i - 1) * (width - 1) + j + 1], arrC[(i - 1) * (width - 1) + j], arrA[j] & arrB[i + 1]);
                             else
                                 adder = new FullAdder(arrA[j + 1] & arrB[i], arrC[i * (width - 1) - 1], arrA[j] & arrB[i + 1]);
@@ -110,7 +122,7 @@ namespace MatrixMultiplier
                     else
                     {
                         if (j == 0)
-                            adder = new HalfAdder(arrC[i * (width - 2)], arrS[i * (width - 2) + 1]);
+                            adder = new FullAdder(arrC[i * (width - 2)], arrS[i * (width - 2) + 1], arrS[i * (width - 2)]);     //last parameter added to perform rounding
                         else if (j < width - 2)
                             adder = new FullAdder(arrS[i * (width - 2) + j + 1], arrC[i * (width - 2) + j], arrC[i * (width - 1) + j - 1]);
                         else
@@ -128,7 +140,7 @@ namespace MatrixMultiplier
                 arrV[k] = arrS[(width - 1) * (width - 1) + k];
             }
             arrV[width - 1] = arrC[width * (width - 1) - 1];
-            return NumUtils.BinArrayToDec(arrV) << width;
+            return NumUtils.BinArrayToDec(arrV);// << width;
         }
     }
 }

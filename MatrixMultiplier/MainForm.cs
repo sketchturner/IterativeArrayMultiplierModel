@@ -19,8 +19,9 @@ namespace MatrixMultiplier
 
         private void btnMult_Click(object sender, EventArgs e)
         {
-            int A, B, width, truncated;
-            if (!(int.TryParse(tbADec.Text, out A) && (int.TryParse(tbBDec.Text, out B)) && (int.TryParse(tbWidth.Text, out width)) && (int.TryParse(tbTruncated.Text, out truncated))))
+            long A, B;
+            int width, truncated;
+            if (!(long.TryParse(tbADec.Text, out A) && (long.TryParse(tbBDec.Text, out B)) && (int.TryParse(tbWidth.Text, out width)) && (int.TryParse(tbTruncated.Text, out truncated))))
                 MessageBox.Show("Incorrect input");
             else if (width > 32)
                 MessageBox.Show("Input data width should be 32 or less");

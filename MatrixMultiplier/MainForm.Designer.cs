@@ -38,8 +38,8 @@
             this.tbWidth = new System.Windows.Forms.TextBox();
             this.tbTruncated = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rbFull = new System.Windows.Forms.RadioButton();
             this.rbShort = new System.Windows.Forms.RadioButton();
+            this.rbFull = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
@@ -49,7 +49,7 @@
             // 
             this.tbADec.Location = new System.Drawing.Point(12, 12);
             this.tbADec.Name = "tbADec";
-            this.tbADec.Size = new System.Drawing.Size(100, 20);
+            this.tbADec.Size = new System.Drawing.Size(263, 20);
             this.tbADec.TabIndex = 0;
             this.tbADec.TextChanged += new System.EventHandler(this.tbADec_TextChanged);
             // 
@@ -58,23 +58,23 @@
             this.tbABin.Enabled = false;
             this.tbABin.Location = new System.Drawing.Point(12, 39);
             this.tbABin.Name = "tbABin";
-            this.tbABin.Size = new System.Drawing.Size(100, 20);
+            this.tbABin.Size = new System.Drawing.Size(263, 20);
             this.tbABin.TabIndex = 1;
             // 
             // tbBDec
             // 
-            this.tbBDec.Location = new System.Drawing.Point(119, 12);
+            this.tbBDec.Location = new System.Drawing.Point(285, 12);
             this.tbBDec.Name = "tbBDec";
-            this.tbBDec.Size = new System.Drawing.Size(100, 20);
+            this.tbBDec.Size = new System.Drawing.Size(248, 20);
             this.tbBDec.TabIndex = 2;
             this.tbBDec.TextChanged += new System.EventHandler(this.tbBDec_TextChanged);
             // 
             // tbBBin
             // 
             this.tbBBin.Enabled = false;
-            this.tbBBin.Location = new System.Drawing.Point(119, 39);
+            this.tbBBin.Location = new System.Drawing.Point(285, 39);
             this.tbBBin.Name = "tbBBin";
-            this.tbBBin.Size = new System.Drawing.Size(100, 20);
+            this.tbBBin.Size = new System.Drawing.Size(248, 20);
             this.tbBBin.TabIndex = 3;
             // 
             // tbResDec
@@ -82,7 +82,7 @@
             this.tbResDec.Enabled = false;
             this.tbResDec.Location = new System.Drawing.Point(12, 116);
             this.tbResDec.Name = "tbResDec";
-            this.tbResDec.Size = new System.Drawing.Size(100, 20);
+            this.tbResDec.Size = new System.Drawing.Size(254, 20);
             this.tbResDec.TabIndex = 4;
             this.tbResDec.TextChanged += new System.EventHandler(this.tbResDec_TextChanged);
             // 
@@ -91,7 +91,7 @@
             this.tbResBin.Enabled = false;
             this.tbResBin.Location = new System.Drawing.Point(12, 142);
             this.tbResBin.Name = "tbResBin";
-            this.tbResBin.Size = new System.Drawing.Size(100, 20);
+            this.tbResBin.Size = new System.Drawing.Size(254, 20);
             this.tbResBin.TabIndex = 5;
             // 
             // btnMult
@@ -106,7 +106,7 @@
             // 
             // tbWidth
             // 
-            this.tbWidth.Location = new System.Drawing.Point(486, 17);
+            this.tbWidth.Location = new System.Drawing.Point(486, 111);
             this.tbWidth.Name = "tbWidth";
             this.tbWidth.Size = new System.Drawing.Size(34, 20);
             this.tbWidth.TabIndex = 7;
@@ -114,7 +114,7 @@
             // 
             // tbTruncated
             // 
-            this.tbTruncated.Location = new System.Drawing.Point(486, 44);
+            this.tbTruncated.Location = new System.Drawing.Point(486, 138);
             this.tbTruncated.Name = "tbTruncated";
             this.tbTruncated.Size = new System.Drawing.Size(34, 20);
             this.tbTruncated.TabIndex = 8;
@@ -124,12 +124,22 @@
             // 
             this.groupBox1.Controls.Add(this.rbShort);
             this.groupBox1.Controls.Add(this.rbFull);
-            this.groupBox1.Location = new System.Drawing.Point(250, 12);
+            this.groupBox1.Location = new System.Drawing.Point(333, 106);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(85, 64);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Multiplication";
+            // 
+            // rbShort
+            // 
+            this.rbShort.AutoSize = true;
+            this.rbShort.Location = new System.Drawing.Point(7, 42);
+            this.rbShort.Name = "rbShort";
+            this.rbShort.Size = new System.Drawing.Size(50, 17);
+            this.rbShort.TabIndex = 1;
+            this.rbShort.Text = "Short";
+            this.rbShort.UseVisualStyleBackColor = true;
             // 
             // rbFull
             // 
@@ -143,20 +153,10 @@
             this.rbFull.Text = "Full";
             this.rbFull.UseVisualStyleBackColor = true;
             // 
-            // rbShort
-            // 
-            this.rbShort.AutoSize = true;
-            this.rbShort.Location = new System.Drawing.Point(7, 42);
-            this.rbShort.Name = "rbShort";
-            this.rbShort.Size = new System.Drawing.Size(50, 17);
-            this.rbShort.TabIndex = 1;
-            this.rbShort.Text = "Short";
-            this.rbShort.UseVisualStyleBackColor = true;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(445, 19);
+            this.label1.Location = new System.Drawing.Point(445, 113);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 10;
@@ -165,7 +165,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(424, 47);
+            this.label2.Location = new System.Drawing.Point(424, 141);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 13);
             this.label2.TabIndex = 11;
@@ -189,7 +189,7 @@
             this.Controls.Add(this.tbABin);
             this.Controls.Add(this.tbADec);
             this.Name = "MainForm";
-            this.Text = "Form1";
+            this.Text = "MainForm";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
